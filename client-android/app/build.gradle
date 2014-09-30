@@ -1,0 +1,39 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.12.+'
+    }
+}
+apply plugin: 'com.android.application'
+
+repositories {
+    mavenCentral()
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion '19.1'
+
+    defaultConfig {
+        applicationId "me.passos.talks.judconbr2014.androidclient"
+        minSdkVersion 16
+        targetSdkVersion 19
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.google.android.gms:play-services:+'
+    compile 'org.jboss.aerogear:aerogear-android-push:1.0.0@aar'
+    compile 'com.google.guava:guava:13.0.1'
+    compile 'com.google.code.gson:gson:2.2.2'
+}
